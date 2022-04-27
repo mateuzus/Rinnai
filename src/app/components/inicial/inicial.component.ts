@@ -181,4 +181,8 @@ export class InicialComponent implements OnInit {
   clearFilterArray() {
     this.returnTab2 = [];
   }
+
+  confirmar() {
+    alert('Processando...')
+  }
 }

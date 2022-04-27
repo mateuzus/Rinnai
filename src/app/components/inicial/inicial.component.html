@@ -19,30 +19,31 @@
         <thf-input class="thf-md-10" t-label="Código de barras"></thf-input>
         <thf-button
           class="thf-md-2 botao"
+          (t-click)="confirmar()"
           t-icon="thf-icon thf-icon-ok"
           t-type="primary"
         ></thf-button>
       </div>
 
       <div class="producao">
-        <thf-input class="thf-md-6" t-label="Ordem Produção"></thf-input>
-        <thf-input class="thf-md-6" t-label="Estado"></thf-input>
+        <thf-input class="thf-md-6" t-label="Ordem Produção" t-disabled="true"></thf-input>
+        <thf-input class="thf-md-6" t-label="Estado" t-disabled="true"></thf-input>
       </div>
 
       <div class="item">
-        <thf-input class="thf-md-6" t-label="Item"></thf-input>
-        <thf-input class="thf-md-6" t-label="Descrição"></thf-input>
+        <thf-input class="thf-md-6" t-label="Item" t-disabled="true"></thf-input>
+        <thf-input class="thf-md-6" t-label="Descrição" t-disabled="true"></thf-input>
       </div>
 
       <div class="quantidade">
-        <thf-input class="thf-md-4" t-label="Qtde Ord"></thf-input>
-        <thf-input class="thf-md-4" t-label="Unidade"></thf-input>
-        <thf-input class="thf-md-4" t-label="Reporta Prod"></thf-input>
+        <thf-input class="thf-md-4" t-label="Qtde Ord" t-disabled="true"></thf-input>
+        <thf-input class="thf-md-4" t-label="Unidade" t-disabled="true"></thf-input>
+        <thf-input class="thf-md-4" t-label="Reporta Prod" t-disabled="true"></thf-input>
       </div>
 
       <div class="referencia">
-        <thf-input class="thf-md-6" t-label="Referência"></thf-input>
-        <thf-input class="thf-md-6" t-label="Processo"></thf-input>
+        <thf-input class="thf-md-6" t-label="Referência" t-disabled="true"></thf-input>
+        <thf-input class="thf-md-6" t-label="Processo" t-disabled="true"></thf-input>
       </div>
     </div>
 
