@@ -1,0 +1,135 @@
+<div class="thf-wrapper">
+  <thf-menu t-collapsed t-filter [t-menus]="menus">
+    <div
+      *t-menu-header-template
+      class="thf-p-2 thf-font-title sample-menu-header-text-color"
+    >
+      <p style="color: white">Bem vindo,</p>
+      <p style="color: white">
+        <b> Rinnai </b>
+      </p>
+    </div>
+  </thf-menu>
+
+  <thf-toolbar t-title="Rinnai" [t-show-notification]="false"></thf-toolbar>
+
+  <thf-page-default [t-title]="menuItemSelected">
+    <div class="cabecalho">
+      <div class="codigo-barras">
+        <thf-input class="thf-md-10" t-label="Código de barras"></thf-input>
+        <thf-button
+          class="thf-md-2 botao"
+          t-icon="thf-icon thf-icon-ok"
+          t-type="primary"
+        ></thf-button>
+      </div>
+
+      <div class="producao">
+        <thf-input class="thf-md-6" t-label="Ordem Produção"></thf-input>
+        <thf-input class="thf-md-6" t-label="Estado"></thf-input>
+      </div>
+
+      <div class="item">
+        <thf-input class="thf-md-6" t-label="Item"></thf-input>
+        <thf-input class="thf-md-6" t-label="Descrição"></thf-input>
+      </div>
+
+      <div class="quantidade">
+        <thf-input class="thf-md-4" t-label="Qtde Ord"></thf-input>
+        <thf-input class="thf-md-4" t-label="Unidade"></thf-input>
+        <thf-input class="thf-md-4" t-label="Reporta Prod"></thf-input>
+      </div>
+
+      <div class="referencia">
+        <thf-input class="thf-md-6" t-label="Referência"></thf-input>
+        <thf-input class="thf-md-6" t-label="Processo"></thf-input>
+      </div>
+    </div>
+
+    <div class="titulo-1">
+      <p>Tabela 1</p>
+    </div>
+
+    <div class="tab-1">
+      <thf-table
+        (t-selected)="filterArray($event)"
+        (t-unselected)="clearFilterArray()"
+        t-checkbox="true"
+        t-single-select="true"
+        [t-columns]="columnsTab1"
+        [t-items]="dataTab1"
+      ></thf-table>
+    </div>
+
+    <div class="titulo-2">
+      <p>Tabela 2</p>
+    </div>
+
+    <div class="tab-2">
+      <thf-table [t-items]="returnTab2" [t-columns]="columnsTab2"></thf-table>
+    </div>
+
+    <thf-modal
+      [t-title]="title"
+      [t-primary-action]="primaryActionsModal()"
+      [t-secondary-action]="secondaryActionsModal()"
+    >
+      <div *ngIf="modal_type === 'texto'">
+        <div class="descricao">
+          Série: <b>{{serie}}</b>
+          Status: <b>{{status}}</b>
+          Status Nu: <b>{{statusNu}}</b>
+        </div>
+        <thf-textarea></thf-textarea>
+      </div>
+
+      <div *ngIf="modal_type === 'faixa'">
+        <div class="descricao">
+          Série: <b>{{serie}}</b>
+          Status: <b>{{status}}</b>
+          Status Nu: <b>{{statusNu}}</b>
+        </div>
+        <thf-decimal
+          class="thf-md-6"
+          name="faixa"
+          t-focus="true"
+          t-label="Result Min"
+          [t-thousand-maxlength]="thousandMaxlength"
+          t-placeholder="0,00"
+        ></thf-decimal>
+        <thf-decimal
+          class="thf-md-6"
+          name="faixa"
+          t-label="Result Max"
+          [t-thousand-maxlength]="thousandMaxlength"
+          t-placeholder="0,00"
+        ></thf-decimal>
+      </div>
+
+      <div *ngIf="modal_type === 'numerico'">
+        <div class="descricao">
+          Série: <b>{{serie}}</b>
+          Status: <b>{{status}}</b>
+          Status Nu: <b>{{statusNu}}</b>
+        </div>
+        <thf-decimal
+          class="thf-md-6"
+          name="numerico"
+          t-focus="true"
+          [t-thousand-maxlength]="thousandMaxlength"
+          t-decimals-length="0"
+          t-label="Result Min"
+          t-placeholder="0"
+        ></thf-decimal>
+        <thf-decimal
+          class="thf-md-6"
+          name="numerico"
+          t-label="Result Max"
+          [t-thousand-maxlength]="thousandMaxlength"
+          t-decimals-length="0"
+          t-placeholder="0"
+        ></thf-decimal>
+      </div>
+    </thf-modal>
+  </thf-page-default>
+</div>

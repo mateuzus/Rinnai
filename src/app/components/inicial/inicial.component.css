@@ -1,0 +1,56 @@
+/* .tab-1, .tab-2 p {
+  text-align: center;
+  color: darkgray;
+  margin-top: 20px;
+}
+ */
+.cabecalho {
+  height: 365px;
+  width: auto;
+}
+
+.codigo-barras {
+  height: 70px;
+}
+
+.producao {
+  height: 70px;
+}
+
+.item {
+  height: 70px;
+}
+
+.quantidade {
+  height: 75px;
+}
+
+.referencia {
+  height: 70px;
+}
+
+.botao {
+  margin-top: 32px;
+}
+
+/* Tabela */
+
+.titulo-1 p {
+  text-align: center;
+  margin: 15px 0 15px 0;
+  color: darkgray;
+}
+
+.titulo-2 p {
+  text-align: center;
+  margin: 15px 0 15px 0;
+  color: darkgray;
+}
+
+.descricao {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #0194be;
+}
